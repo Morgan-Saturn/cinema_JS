@@ -13,11 +13,11 @@ fetch(rssUrl)
     items.forEach(el =>{
         html += `
                 <div class='movie'>
-                    <img class='movie_img' src='assets/example_movie.png' style='width: 100%; height: 100%;' alt='affiche du film'>
+                    <img class='movie_img' src='${el.getElementsByTagName('media:thumbnail')[0].getAttribute('url')}' style='width: 100%; height: 100%;' alt='affiche du film'>
                     <h3 class='categories'>
-                        <a href='${el.querySelector('link').innerHTML}'>${el.querySelector('title').innerHTML}</a>
+                        <a href='${el.querySelector('link').textContent}'>${el.querySelector('title').textContent}</a>
                     </h3>
-                    <p class='summary'>${el.querySelector('description').innerHTML}</p>
+                    <p class='summary'>${el.querySelector('description').textContent}</p>
                 </div>
                 `
     });
