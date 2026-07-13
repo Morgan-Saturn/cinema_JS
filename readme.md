@@ -1,0 +1,1 @@
+Il s'agit d'une petite page web construite sans aucun framework, librairie externe, ni dépendance. L'objectif est d'extraire un flux rss et en implanter les informations voulues en nombre de résultats voulus dans une grille de 3 colonnes tout en assurant le responsive. L'objectif final est de faire la même chose que la première version en php, mais en javascript cette fois. =D
