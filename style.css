@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+h1{
+    text-align: center;
+    font-weight: bolder;
+}
+.tags{
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+}
+.hashtag{
+    color: #FFA200;
+}
+.searchbar_container, 
+.movie_container{
+    background-color: #E3E1E1;
+}
+.searchbar_container button,
+.voir_plus{
+    background-color: #FFE100;
+    border: none;
+    padding: 11px;
+    cursor: pointer;
+}
+.movie_container a{
+    margin: auto;
+    display: flex;
+    text-decoration: none;
+}
+.searchbar_container button:hover,
+.voir_plus:hover{
+    background-color: #dbc200;
+}
+.searchbar_container{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0%;
+}
+.searchbar input[type=search], .searchbar_container a{
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+.searchbar_container a{
+    margin-right: 40px;
+    align-self: center;
+}
+.searchbar{
+    width: 50%;
+}
+.searchbar input[type=search]{
+    width: 70%;
+    padding: 10px;
+}
+.connect{
+    color: #24A4EA;
+    cursor: pointer;
+}
+.movie_container h2{
+    text-align: center;
+    padding-top: 2rem;
+    margin: auto;
+}
+.movie_grid{
+    display: grid;
+    gap: 40px 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    grid-template-columns: repeat(3, 1fr);
+}
+.movie_grid .summary{
+    color: #9A9DA2;
+}
+.movie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.movie_img{
+    width: 100%;
+}
+.categories a{
+    text-decoration: none; 
+    color: black;
+}
+.categories a:hover{
+    color:green;
+}
+.voir_plus{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+@media (min-width: 790px){
+    #search_icons{
+        display: none;
+    }
+}
+@media (max-width: 790px){
+    .movie_grid{
+        display: flex;
+        flex-direction: column;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+    }
+    .tags{
+        font-size: 10pt;
+        gap: 10px;
+    }
+    .searchbar_container{
+        display: none;
+    }
+    .searchbar_container{
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+    .searchbar_container .searchbar{
+        width: 100%;
+        
+    }
+    .searchbar_container input[type=search],
+    .searchbar_container button{
+        width: 95%;
+        margin: 10px;
+    }
+}
