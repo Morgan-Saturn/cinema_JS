@@ -7,7 +7,7 @@ var view = {
 };
 //une fonction pour load les news, une pour générer l'affichage avec le bouton load more
 
-function loadNews() {
+function loadAndShowNews() {
     fetch(rssUrl + '?count='+ view.currentResultCount)  //reçoit le nb d'items voulu à charger
     .then(response => response.text())
     .then(data => {
@@ -31,7 +31,7 @@ function loadNews() {
     })
 };
     
-loadNews();
+loadAndShowNews();
 
 function displayNews() {
     let html = '';
@@ -52,5 +52,6 @@ function displayNews() {
 loadMore.addEventListener('click', () => {
     
     view.currentResultCount += 3;
-    loadNews();
+    loadAndShowNews();
 });
+
