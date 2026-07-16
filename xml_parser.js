@@ -13,7 +13,6 @@ function loadNews() {
     .then(data => {
         let parser = new DOMParser();
         let xml = parser.parseFromString(data, "application/xml" );
-        //let items = xml.querySelectorAll('item');
         let items = Array.from(xml.querySelectorAll('item'));
         let results = Array.prototype.slice.call(xml.querySelectorAll('item'), 0,view.currentResultCount);
 

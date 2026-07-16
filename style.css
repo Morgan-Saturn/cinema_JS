@@ -28,11 +28,7 @@ h1{
     border: none;
     padding: 11px;
     cursor: pointer;
-}
-.movie_container a{
-    margin: auto;
-    display: flex;
-    text-decoration: none;
+    margin : auto;
 }
 .searchbar_container button:hover,
 .voir_plus:hover{
@@ -64,6 +60,10 @@ h1{
 .connect{
     color: #24A4EA;
     cursor: pointer;
+}
+.movie_container{
+    display: flex;
+    flex-direction: column;
 }
 .movie_container h2{
     text-align: center;
@@ -97,7 +97,6 @@ h1{
     color:green;
 }
 .voir_plus{
-    margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
