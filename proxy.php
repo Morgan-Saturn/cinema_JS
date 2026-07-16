@@ -14,4 +14,3 @@ if ($rssContent === FALSE) {
 }
 
 echo $rssContent;
-?>
