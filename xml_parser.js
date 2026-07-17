@@ -1,6 +1,7 @@
 const rssUrl = "proxy.php";
 const parentElement = document.querySelector(".movie_grid");
 const loadMore = document.querySelector('.voir_plus');
+let searchbar = document.getElementById('searchbar');
 var view = {
     news : [],
     currentResultCount : 3
@@ -28,7 +29,7 @@ function loadAndShowNews() {
             }
         });
     displayNews();
-    })
+    });
 };
     
 loadAndShowNews();
@@ -46,12 +47,25 @@ function displayNews() {
                 </div>
                 `;
                 
-    })
+    });
     parentElement.innerHTML = html;
 }
 loadMore.addEventListener('click', () => {
     
     view.currentResultCount += 3;
     loadAndShowNews();
+});
+
+searchbar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value;
+    view.news.forEach(item => {
+        const filteredNews = view.news.filter(item => {
+        return(
+            item.title.includes(searchString) ||
+            item.description.includes(searchString)
+        );
+    });
+    console.log(filteredNews);
+    });
 });
 
