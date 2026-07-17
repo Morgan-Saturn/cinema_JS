@@ -57,12 +57,12 @@ loadMore.addEventListener('click', () => {
 });
 
 searchbar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
+    const searchString = e.target.value.toLowerCase();
     view.news.forEach(item => {
         const filteredNews = view.news.filter(item => {
         return(
-            item.title.includes(searchString) ||
-            item.description.includes(searchString)
+            item.title.toLowerCase().includes(searchString) ||
+            item.description.toLowerCase().includes(searchString)
         );
     });
     console.log(filteredNews);
