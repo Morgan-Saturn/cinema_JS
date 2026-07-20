@@ -34,9 +34,9 @@ function loadAndShowNews() {
     
 loadAndShowNews();
 
-function displayNews() {
+function displayNews(newsToShow = view.news) {
     let html = '';
-    view.news.slice(-view.currentResultCount).forEach(item => {
+    newsToShow.slice(-view.currentResultCount).forEach(item => {
         html += `
                 <div class='movie'>
                     <img class='movie_img' src='${item.img}' style='width: 100%; height: 100%;' alt='affiche du film'>
