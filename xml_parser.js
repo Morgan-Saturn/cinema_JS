@@ -49,10 +49,18 @@ function displayNews(newsToShow = view.news) {
                 
     });
     parentElement.innerHTML = html;
-   // const movie = parentElement.querySelectorAll('.movie');
-   // movie.forEach(item => {item.style.setProperty('--i', 2)});
 
-}
+    //création d'animations randoms pour des critères de l'animation aux valeurs générées aléatoirement
+    const movie = parentElement.querySelectorAll('.movie');
+    movie.forEach(item => {
+        const randomDelay = Math.random() * 2; //entre 0 et 2s
+        const randomI = Math.random() * 5;
+        const randomDuration = Math.random() * 3;
+        item.style.setProperty('--i', randomI);
+        item.style.animationDelay = `${randomDelay}s`;
+        item.style.animationDuration = `${randomDuration}s`;
+        });    
+    }
 loadMore.addEventListener('click', () => {
     
     view.currentResultCount += 3;
