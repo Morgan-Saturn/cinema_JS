@@ -1,7 +1,7 @@
 const rssUrl = "proxy.php";
 const parentElement = document.querySelector(".movie_grid");
 const loadMore = document.querySelector('.voir_plus');
-let searchbar = document.getElementById('searchbar');
+const searchbar = document.getElementById('searchbar');
 var view = {
     news : [],
     currentResultCount : 3
