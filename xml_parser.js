@@ -49,6 +49,9 @@ function displayNews(newsToShow = view.news) {
                 
     });
     parentElement.innerHTML = html;
+   // const movie = parentElement.querySelectorAll('.movie');
+   // movie.forEach(item => {item.style.setProperty('--i', 2)});
+
 }
 loadMore.addEventListener('click', () => {
     
@@ -56,22 +59,18 @@ loadMore.addEventListener('click', () => {
     loadAndShowNews();
 });
 
+
+//stuff.normalize("NFD").replace(/[\u0300-\u036f]/g, "") method isn't perfect since it doesn't take care of non latin characters and I can easily break my page using cyrillic alphabet, german characters, spanish or polish accents, vietnamese alphabet etc, you name it. But I chose to use it anyways 'cause I don't think it's necessary to completely protect my input here since it's just a silly little project ; I don't want to download a whole package or library or anything to make it more robust, so that solution is the one that made the most sense to me. If you type your words using latin characters, peferably in french =)))) removing the diacritics completely works just fine.
+
 searchbar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    view.news.forEach(item => {
-        const filteredNews = view.news.filter(item => {
-        return(
-            item.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString) ||
-            item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString)
+    const filteredNews = view.news.filter(item => {
+    return(
+        item.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString) ||
+        item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString)
         );
     });
     //on n'affiche que les news pertinentes avec la recherche
-    if (!item.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString) ||
-        !item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString))
-    {
-        displayNews(filteredNews);
-    }
-    });
+    displayNews(filteredNews);
 });
 
-//stuff.normalize("NFD").replace(/[\u0300-\u036f]/g, "") method isn't perfect since it doesn't take care of non latin characters and I can easily break my page using cyrillic alphabet, german characters, spanish or polish accents, vietnamese alphabet etc, you name it. But I chose to use it anyways 'cause I don't think it's necessary to completely protect my input here since it's just a silly little project ; I don't want to download a whole package or library or anything to make it more robust, so that solution is the one that made the most sense to me. If you type your words using latin characters, peferably in french =)))) removing the diacritics completely works just fine.
