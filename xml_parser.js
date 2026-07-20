@@ -65,7 +65,6 @@ searchbar.addEventListener('keyup', (e) => {
             item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString)
         );
     });
-    console.log(filteredNews);
     //on n'affiche que les news pertinentes avec la recherche
     if (!item.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString) ||
         !item.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(searchString))
