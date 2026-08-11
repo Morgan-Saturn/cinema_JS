@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --i : 4s;
+}
 body{
     width: 70%;
     margin: auto;
@@ -90,6 +93,7 @@ h1{
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
     animation-duration: 1s;
+    transition-delay: all calc(var(--i) * 300ms);
 }
 .movie_img{
     width: 100%;
